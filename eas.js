@@ -75,7 +75,13 @@ confirmbutton.addEventListener("click", (e) => {
       inputvalue.value = "";
       loverlay.style.display = "none";
     });
-  } else alert("no more than 100!");
+  } else {
+    if (inputvalue.value > 100) {
+      alert("no more than 100!");
+    } else if (!isNaN(parseInt(inputvalue.value))) {
+      alert("type a number  !");
+    }
+  }
 });
 
 const resetbutton = document.querySelector("button.reset");
