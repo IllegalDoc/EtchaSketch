@@ -78,7 +78,7 @@ confirmbutton.addEventListener("click", (e) => {
   } else {
     if (inputvalue.value > 100) {
       alert("no more than 100!");
-    } else if (!isNaN(parseInt(inputvalue.value))) {
+    } else if (isNaN(parseInt(inputvalue.value))) {
       alert("type a number  !");
     }
   }
