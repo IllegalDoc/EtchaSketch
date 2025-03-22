@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="options">
+      <div class="reseting"><button class="reset">Reset</button></div>
+
+      <p class="help">Draw Something Using your mouse on the Box Below!</p>
+      <div class="changingbutton">
+        <button class="changingbutton">Change Size !</button>
+      </div>
+    </div>
+    <div class="squares"></div>
+    <div class="overlay">
+      <div class="changesketch">
+        <div class="icon">!</div>
+        <div class="column2">
+          <p class="changesketch">Type the new Size of your grid (MAX 100!)</p>
+          <input
+            class="size"
+            placeholder="Type the value in here!"
+            type="text"
+          />
+          <div class="changebuttons">
+            <button class="submitsize">Confirm</button>
+            <button class="cancel">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="startgame"><p class="startgame">Etch-a-Sketch ?</p></div>
+    <script src="eas.js" defer></script>
+  </body>
+</html>
