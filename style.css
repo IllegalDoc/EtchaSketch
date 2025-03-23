@@ -147,9 +147,10 @@ body {
 }
 div.options {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   height: 15vh;
   width: 100vw;
+  gap: 16px;
 }
 p.help {
   font-size: larger;
@@ -172,4 +173,12 @@ div.options button:hover {
 
 input.changecolor {
   border: transparent;
+}
+p.footer {
+  color: white;
+  font-weight: 800;
+}
+div.changecolor {
+  color: black;
+  font-weight: 800;
 }

@@ -122,3 +122,17 @@ const drawbutton = document.querySelector("button.draw");
 drawbutton.addEventListener("click", (e) => {
   eventlistenerRainbow(document.querySelectorAll("div.square"));
 });
+
+function eventlistenercustomColor(squares, color) {
+  squares.forEach((squarediv) => {
+    squarediv.addEventListener("mouseover", (e) => {
+      squarediv.style.backgroundColor = color;
+    });
+  });
+}
+choosecolor = document.querySelector("input.changecolor");
+choosecolor.addEventListener("change", (e) => {
+  let color = choosecolor.value;
+  console.log(choosecolor.value);
+  eventlistenercustomColor(document.querySelectorAll("div.square"), color);
+});
