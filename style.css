@@ -155,7 +155,8 @@ p.help {
   font-size: larger;
   font-weight: 700;
 }
-button.reset {
+
+div.options button {
   background-color: #3497da;
   border: transparent;
   border-radius: 3px;
@@ -165,20 +166,10 @@ button.reset {
   padding: 5px;
   margin-top: 5px;
 }
-button.changingbutton {
-  background-color: #3497da;
-  border: transparent;
-  border-radius: 3px;
-  color: white;
-  align-self: center;
-  font-size: medium;
-  padding: 5px;
-  margin-top: 5px;
+div.options button:hover {
+  color: black;
 }
 
-button.changingbutton:hover {
-  color: black;
-}
-button.reset:hover {
-  color: black;
+input.changecolor {
+  border: transparent;
 }

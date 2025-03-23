@@ -43,17 +43,9 @@ confirmbutton.addEventListener("click", (e) => {
     const rows = document.querySelector("div.squares");
 
     rows.innerHTML = newrows.innerHTML;
-    const Squareselector = document.querySelectorAll("div.square");
-    Squareselector.forEach((squarediv) => {
-      squarediv.addEventListener("mouseover", (e) => {
-        let values = randomcolors();
-
-        squarediv.style.backgroundColor =
-          "rgb(" + values[0] + "," + values[1] + "," + values[2] + ")";
-      });
-      inputvalue.value = "";
-      loverlay.style.display = "none";
-    });
+    inputvalue.value = "";
+    loverlay.style.display = "none";
+    eventlistenerRainbow(rows.querySelectorAll("div.square"));
   } else {
     if (inputvalue.value > 100) {
       alert("no more than 100!");
@@ -91,17 +83,19 @@ function randomcolors() {
 }
 
 function eventlistenerWhite(squares) {
-  sqaures.forEach((squarediv) => {
-    squarediv.addEventListener("mouseover", (e) => {});
-    squarediv.style.backgroundColor = "white";
+  squares.forEach((squarediv) => {
+    squarediv.addEventListener("mouseover", (e) => {
+      squarediv.style.backgroundColor = "white";
+    });
   });
+  console.log("rahi temchi");
 }
 
 const eraserbutton = document.querySelector("button.eraser");
-eraserbutton.addEventListener(
-  "click",
-  eventlistenerWhite(document.querySelectorAll(div.square))
-);
+
+eraserbutton.addEventListener("click", (e) => {
+  eventlistenerWhite(document.querySelectorAll("div.square"));
+});
 
 function eventlistenerRainbow(squares) {
   squares.forEach((squarediv) => {
@@ -116,10 +110,15 @@ function eventlistenerRainbow(squares) {
 /*let SquareOpacity = squarediv.style.opacity;
         SquareOpacity = parseFloat(SquareOpacity);
         if (SquareOpacity === 1) {
-          SquareOpacity -= 0.1;
+          SquareOpacity -= 0.1; 
           squarediv.style.opacity = SquareOpacity;
         } else {
           SquareOpacity += 0.1;
           squarediv.style.opacity = SquareOpacity;
         }
         console.log(squarediv.style.opacity.value);*/
+
+const drawbutton = document.querySelector("button.draw");
+drawbutton.addEventListener("click", (e) => {
+  eventlistenerRainbow(document.querySelectorAll("div.square"));
+});
