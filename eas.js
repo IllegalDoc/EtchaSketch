@@ -1,27 +1,6 @@
 let row = document.createElement("div");
 row.className = "row";
-for (let i = 0; i < 16; i++) {
-  const divsquare = document.createElement("div");
-  divsquare.className = "square";
-  row.appendChild(divsquare);
-}
-
-let rows = document.querySelector("div.squares");
-for (i = 0; i < 16; i++) {
-  rows.appendChild(row.cloneNode(true));
-}
-
-const Squareselector = document.querySelectorAll("div.square");
-
-Squareselector.forEach((squarediv) => {
-  squarediv.addEventListener("mouseover", (e) => {
-    let values = randomcolors();
-    squarediv.style.backgroundColor =
-      "rgb(" + values[0] + "," + values[1] + "," + values[2] + ")";
-  });
-});
 const loverlay = document.querySelector("div.overlay");
-
 loverlay.style.display = "none";
 const divsketchchange = document.querySelector("div.changesketch");
 const ChangingSizebutton = document.querySelector("button.changingbutton");
@@ -95,7 +74,11 @@ resetbutton.addEventListener("click", (e) => {
 const newgamebutton = document.querySelector("p.startgame");
 const divnewgame = document.querySelector("div.startgame");
 newgamebutton.addEventListener("click", (e) => {
+  const newrows = createsketch(16);
+  const rows = document.querySelector("div.squares");
+  rows.innerHTML = newrows.innerHTML;
   divnewgame.style.display = "none";
+  eventlistenerRainbow(rows.querySelectorAll("div.square"));
 });
 
 function randomcolors() {
@@ -106,6 +89,30 @@ function randomcolors() {
   ];
   return values;
 }
+
+function eventlistenerWhite(squares) {
+  sqaures.forEach((squarediv) => {
+    squarediv.addEventListener("mouseover", (e) => {});
+    squarediv.style.backgroundColor = "white";
+  });
+}
+
+const eraserbutton = document.querySelector("button.eraser");
+eraserbutton.addEventListener(
+  "click",
+  eventlistenerWhite(document.querySelectorAll(div.square))
+);
+
+function eventlistenerRainbow(squares) {
+  squares.forEach((squarediv) => {
+    squarediv.addEventListener("mouseover", (e) => {
+      let values = randomcolors();
+      squarediv.style.backgroundColor =
+        "rgb(" + values[0] + "," + values[1] + "," + values[2] + ")";
+    });
+  });
+}
+
 /*let SquareOpacity = squarediv.style.opacity;
         SquareOpacity = parseFloat(SquareOpacity);
         if (SquareOpacity === 1) {
